@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  shimmer: ^1.1.1
   google_sign_in: ^4.5.1
   cloud_firestore: ^0.13.7
   firebase_auth: ^0.16.1

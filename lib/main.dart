@@ -20,15 +20,17 @@ class _MainState extends State<Main> {
     return MaterialApp(
       title: "Skype",
       debugShowCheckedModeBanner: false,
-      home: FutureBuilder(
-          future: _firebaseRepository.getCurrentUser(),
-          builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
-            if (snapshot.hasData) {
-              return HomeScreen();
-            } else {
-              return LoginScreen();
-            }
-          }),
+      home: Container(
+        child: FutureBuilder(
+            future: _firebaseRepository.getCurrentUser(),
+            builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
+              if (snapshot.hasData) {
+                return HomeScreen();
+              } else {
+                return LoginScreen();
+              }
+            }),
+      ),
     );
   }
 }
