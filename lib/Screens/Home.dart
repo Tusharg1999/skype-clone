@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:skype/Screens/PageView/MessageView/main.dart';
 import 'package:skype/resources/repository/FirebaseRepository.dart';
 import 'package:skype/utils/UniversalVariables.dart';
 
@@ -11,11 +12,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   PageController _controller;
   int _page = 0;
-  FirebaseRepository _repository = FirebaseRepository();
 
   @override
   void initState() {
-    // TODO: implement initState
     _controller = PageController();
     super.initState();
   }
@@ -71,9 +70,8 @@ class _HomeScreenState extends State<HomeScreen> {
               controller: _controller,
               children: <Widget>[
                 Center(
-                  child: Text(
-                    "Message",
-                    style: TextStyle(color: Colors.white),
+                  child: Container(
+                    child: MessageView(),
                   ),
                 ),
                 Center(
